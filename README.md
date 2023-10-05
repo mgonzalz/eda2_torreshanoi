@@ -14,8 +14,7 @@ siguientes reglas: </br>
 en la parte superior de otra pila o en una varilla vacía.
 - No se puede colocar un disco sobre otro disco que sea más pequeño que él.
 
-![Alt text](image.png)
-
+![Alt text](data/image.png)
 
 En este ejercicio, se pide que se modele e implemente una solución al problema usando el
 TDA de la pila (LIFO). Se debe programar las clases necesarias para dicha estructura y por
