@@ -1,3 +1,4 @@
+#ESTRUCTURA SACADA DE LOS APUNTES
 class nodoPila(object):
     info, sig = None, None
 
