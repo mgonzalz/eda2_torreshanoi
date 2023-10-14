@@ -3,7 +3,7 @@ from pilaHanoi import Pila
 def getTablero(n):
     tablero = []
     for i in range(3):
-        tablero.append(Pila())
+        tablero.append(Pila(i+1))
     for i in range(n, 0, -1):
         tablero[0].apilar(i)
     return tablero
@@ -18,7 +18,7 @@ def solve(tablero, n, A, B, C, movimientos):
 
     solve(tablero, n - 1, A, C, B, movimientos)
     disco = tablero[A].desapilar()
-    tablero[C].apilar(disco)
+    tablero[B].apilar(disco)
     movimientos.append(f"D{disco} from T{A + 1} to T{C + 1}")
     solve(tablero, n - 1, C, B, A, movimientos)
 

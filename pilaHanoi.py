@@ -7,29 +7,21 @@ class Pila():
 
 
 class nodoPila(object):
-    def __init__(self, dato):
-        self.dato = dato
-        self.siguiente = None
+    info, sig = None, None
 
 class Pila(object):
-    def __init__(self):
-        self.superior = None
+    def __init__(self, numero):
+        self.cima = None
         self.tamanio = 0
+        self.numero = numero
     def apilar(self, dato):
-        if self.superior == None:
-            self.superior = nodoPila(dato)
-            return
-        nuevo_nodo = nodoPila(dato)
-        nuevo_nodo.siguiente = self.superior
-        self.superior = nuevo_nodo
+        nodo = nodoPila()
+        nodo.info = dato
+        nodo.sig = self.cima
+        self.cima = nodo
+        self.tamanio += 1
     def desapilar(self):
-        if self.superior == None:
-            print('Pila vacia')
-            return
-        self.superior = self.superior.siguiente
-    def __str__(self):
-        nodo_actual = self.superior
-        while nodo_actual != None:
-            print(nodo_actual.dato)
-            nodo_actual = nodo_actual.siguiente
-        return ''
+        x = self.cima.info
+        self.cima = self.cima.sig
+        self.tamanio -= 1
+        return x
