@@ -26,6 +26,8 @@ if __name__ == '__main__':
     n = 5
     print('INICIO TORRES')
     tablero = getTablero(n)
+    for i in tablero:
+        print(f'Tablero: {i}')
     print('MOVIMIENTOS')
     movimientos = []
     solve(tablero, n, 0, 1, 2, movimientos)
@@ -33,4 +35,6 @@ if __name__ == '__main__':
         print(i)
     
     print('FIN TORRES')
+    for i in tablero:
+        print(f'Tablero: {i}')
 

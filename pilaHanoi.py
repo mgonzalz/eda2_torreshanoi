@@ -1,11 +1,3 @@
-'''
-class nodoPila():
-    
-
-class Pila():
-    '''
-
-
 class nodoPila(object):
     info, sig = None, None
 
@@ -25,3 +17,10 @@ class Pila(object):
         self.cima = self.cima.sig
         self.tamanio -= 1
         return x
+    def __str__(self):
+        lista = []
+        nodo = self.cima
+        while nodo:
+            lista.append(nodo.info)
+            nodo = nodo.sig
+        return str(lista)
