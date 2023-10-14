@@ -9,31 +9,28 @@ def getTablero(n):
     return tablero
 
 
-def solve(tablero, n, A, B, C, movimientos):
+def solve(tablero, n, origen, destino, aux, movimientos):
     if n == 1:
-        disco = tablero[A].desapilar()
-        tablero[C].apilar(disco)
-        movimientos.append(f"D{disco} from T{A + 1} to T{C + 1}")
+        disco = tablero[origen].desapilar()
+        tablero[destino].apilar(disco)
+        movimientos.append(f"D{disco} from T{origen + 1} to T{destino + 1}")
         return
 
-    solve(tablero, n - 1, A, C, B, movimientos)
-    disco = tablero[A].desapilar()
-    tablero[B].apilar(disco)
-    movimientos.append(f"D{disco} from T{A + 1} to T{C + 1}")
-    solve(tablero, n - 1, C, B, A, movimientos)
+    solve(tablero, n - 1, origen, aux, destino, movimientos)
+    disco = tablero[origen].desapilar()
+    tablero[destino].apilar(disco)
+    movimientos.append(f"D{disco} from T{origen + 1} to T{destino + 1}")
+    solve(tablero, n - 1, aux, destino, origen, movimientos)
 
 if __name__ == '__main__':
+    n = 5
     print('INICIO TORRES')
-    tablero = getTablero(5)
-    for i in range(3):
-        print(tablero[i])
-    
+    tablero = getTablero(n)
     print('MOVIMIENTOS')
     movimientos = []
-    solve(tablero, len(tablero), 0, 1, 2, movimientos)
+    solve(tablero, n, 0, 1, 2, movimientos)
     for i in movimientos:
         print(i)
     
     print('FIN TORRES')
-    for i in range(3):
-        print(tablero[i])
+
