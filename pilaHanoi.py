@@ -28,9 +28,8 @@ class Pila(object):
             return
         self.superior = self.superior.siguiente
     def __str__(self):
-        aux = self.superior
-        cadena = ''
-        while aux != None:
-            cadena = cadena + str(aux.dato) + '\n'
-            aux = aux.siguiente
-        return cadena
+        nodo_actual = self.superior
+        while nodo_actual != None:
+            print(nodo_actual.dato)
+            nodo_actual = nodo_actual.siguiente
+        return ''
