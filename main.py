@@ -3,7 +3,7 @@ from pilaHanoi import Pila
 def getTablero(n):
     tablero = []
     for i in range(3):
-        tablero.append(Pila(i+1))
+        tablero.append(Pila())
     for i in range(n, 0, -1):
         tablero[0].apilar(i)
     return tablero

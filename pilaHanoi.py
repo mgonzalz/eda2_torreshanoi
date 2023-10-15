@@ -3,10 +3,9 @@ class nodoPila(object):
     info, sig = None, None
 
 class Pila(object):
-    def __init__(self, numero):
+    def __init__(self):
         self.cima = None
         self.tamanio = 0
-        self.numero = numero
     def apilar(self, dato):
         nodo = nodoPila()
         nodo.info = dato
